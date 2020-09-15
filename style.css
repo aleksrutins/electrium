@@ -7,7 +7,7 @@ div#grid {
 }
 div#titlebar {
   display: grid;
-  grid-template-columns: 1fr /*1fr*/ 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 30px;
   height: 30px;
   justify-content: space-between;
@@ -31,7 +31,7 @@ div#titlebar {
   /* margin-right: 20px; */
   /* align-self: end; */
 }
-#titlebar #buttons button {
+#titlebar button {
   font-size: 16px;
   border: none;
   border-radius: 0px;
@@ -40,13 +40,15 @@ div#titlebar {
   padding: 6px;
   background-color: #333333;
   color: #fff;
+}
+#titlebar #buttons button {
   height: 100%;
   width: 33%;
 }
 button:focus {
   outline: none;
 }
-#titlebar #buttons button:hover {
+#titlebar button:hover {
   background-color: #222222;
 }
 #titlebar #buttons button#quit:hover {
@@ -83,4 +85,5 @@ button.app.selected {
 #grid #mainContent #main {
   height: 100%;
   width: 100%;
+  background-color: white;
 }

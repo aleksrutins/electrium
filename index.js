@@ -4,24 +4,27 @@ const chalk = require('chalk');
 const config = require('./config.js');
 
 console.log(chalk`[{green.bold Electrium}/{red Config}] checking config`);
-if(!fs.existsSync(`${process.env.HOME || process.env.USERDIR}/.electrium.json`)) {
-    console.log(chalk`[{green.bold Electrium}/{red Config}] ~/.electrium.json does not exist; creating...`);
-    fs.writeFileSync(config, JSON.stringify({
-        apps: [
-            {
-                name: 'Welcome',
-                url: 'welcome.html',
-                img: 'welcome.svg',
-                default: true
-            },
-            {
-                name: 'Add App',
-                url: 'login.html',
-                img: 'add.svg',
-                special: 'addApp'
-            }
-        ]
-    }));
+if(!fs.existsSync(config)) {
+    console.log(chalk`[{green.bold Electrium}/{red Config}] ~/.electrium.toml does not exist; creating...`);
+    fs.writeFileSync(config, `
+[[apps]]
+name = "Welcome"
+url = "welcome.html"
+img = "welcome.svg"
+default = true
+
+# Add apps here
+# Example (Slack web app):
+# [[apps]]
+# name = "Slack"
+# url = "https://app.slack.com/client"
+# img = "https://a.slack-edge.com/80588/marketing/img/meta/favicon-32.png"
+
+[[apps]]
+name = "Add App"
+url = "login.html"
+img = "add.svg"
+    `);
 }
 
 function createWindow() {
@@ -34,7 +37,9 @@ function createWindow() {
             nodeIntegration: true,
             enableRemoteModule: true,
             webviewTag: true,
-            nodeIntegrationInSubFrames: true
+            nodeIntegrationInSubFrames: true,
+            worldSafeExecuteJavaScript: true,
+            nativeWindowOpen: true
         },
         autoHideMenuBar: true,
         icon: require('path').join(__dirname, 'logo.png')

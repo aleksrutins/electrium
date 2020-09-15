@@ -3,6 +3,7 @@ const config = require('./config.js');
 const fs = require('fs');
 const chalk = require('chalk');
 const launchApp = require('./launchApp.js');
+const toml = require('@iarna/toml');
 var win = remote.getCurrentWindow();
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -24,9 +25,10 @@ quit.addEventListener("click", () => {
   win.close();
 });
 
+document.querySelector('#devtools').addEventListener('click', () => win.webContents.toggleDevTools());
 
 console.log(chalk`[{bold.green Electrium}/{red Render}] loading config`);
-const curConf = JSON.parse(fs.readFileSync(config));
+const curConf = toml.parse(fs.readFileSync(config));
 let frag = document.createDocumentFragment();
 curConf.apps.forEach(app => {
   let btn = document.createElement('button');
@@ -34,7 +36,7 @@ curConf.apps.forEach(app => {
   if(app.default) {
     btn.classList.add('selected');
     launchApp(app.url);
-     document.querySelector('#titleshown').innerHTML = document.title = app.name;
+    document.querySelector('#titleshown').innerHTML = document.title = app.name;
   }
   btn.setAttribute('data-url', app.url);
   btn.setAttribute('title', app.name);
@@ -61,6 +63,5 @@ for(const btn of apps) {
     }
   })
 }
-document.querySelector('#devtools').addEventListener('click', () => win.webContents.toggleDevTools());
 
 });

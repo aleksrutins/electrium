@@ -11,6 +11,7 @@
     "electron": "^10.1.1"
   },
   "dependencies": {
+    "@iarna/toml": "^2.2.5",
     "chalk": "^4.1.0",
     "template-element": "^2.4.1"
   }
