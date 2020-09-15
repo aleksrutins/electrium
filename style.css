@@ -1,0 +1,86 @@
+div#grid {
+  display: grid;
+  grid-template-columns: 60px 20fr;
+  grid-template-rows: auto;
+  height: 100vh;
+  width: 100vw;
+}
+div#titlebar {
+  display: grid;
+  grid-template-columns: 1fr /*1fr*/ 1fr;
+  grid-template-rows: 30px;
+  height: 30px;
+  justify-content: space-between;
+  width: 100%;
+  -webkit-app-region: drag;
+  background-color: #222222;
+  color: #fff;
+  align-items: center;
+}
+#titlebar #devtools {
+  justify-self: end;
+  -webkit-app-region: no-drag;
+}
+#titlebar #buttons {
+  justify-self: end;
+  padding: 0;
+  margin: 0;
+  width: 150px;
+  font-size: 0;
+  -webkit-app-region: no-drag;
+  /* margin-right: 20px; */
+  /* align-self: end; */
+}
+#titlebar #buttons button {
+  font-size: 16px;
+  border: none;
+  border-radius: 0px;
+  height: 30px;
+  margin: 0;
+  padding: 6px;
+  background-color: #333333;
+  color: #fff;
+  height: 100%;
+  width: 33%;
+}
+button:focus {
+  outline: none;
+}
+#titlebar #buttons button:hover {
+  background-color: #222222;
+}
+#titlebar #buttons button#quit:hover {
+  background-color: red;
+}
+body, html {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+div#sidebar {
+  text-align: center;
+  align-items: center;
+  background-color: #222222;
+  padding: 6px;
+}
+
+button.app, button.app img {
+  display: block;
+  height: 1fr;
+  width: 1fr;
+  border-radius: 10px;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 7px;
+}
+button.app.selected {
+  transition-property: border-right;
+  border-right: 3px solid teal;
+  transition-duration: 10ms;
+}
+
+#grid #mainContent #main {
+  height: 100%;
+  width: 100%;
+}

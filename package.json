@@ -1,0 +1,17 @@
+{
+  "name": "electron-test",
+  "version": "1.0.0",
+  "description": "A test Electron Windows app",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^10.1.1"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "template-element": "^2.4.1"
+  }
+}

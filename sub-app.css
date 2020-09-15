@@ -1,0 +1,29 @@
+@import "button.css";
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('logo.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+div#mainArea {
+    box-shadow: 3px 3px 5px black;
+    margin-top: 30vh;
+    margin-bottom: 30vh;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    padding: 10px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0,0,0,0.2);
+}
+h1 {
+    font-style: italic;
+}
+
+input {
+    border-radius: 3px;
+    border: 1px solid black;
+}
