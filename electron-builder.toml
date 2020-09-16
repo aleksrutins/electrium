@@ -1,0 +1,13 @@
+appId = "com.munchkinhalfling.Electrium"
+
+[win]
+icon = "logo-256x256.png"
+
+[mac]
+icon = "logo-256x256.png"
+
+[linux]
+target = "AppImage"
+executableName = "electrium"
+icon = "logo-256x256.png"
+category = "Internet"

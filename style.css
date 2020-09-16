@@ -89,7 +89,7 @@ button.app.selected {
 }
 
 #grid #mainContent #main {
-  height: 100%;
+  height: calc(100% - 30px);
   width: 100%;
   background-color: white;
 }

@@ -3,7 +3,7 @@ const config = require('./config.js');
 const fs = require('fs');
 const chalk = require('chalk');
 const launchApp = require('./launchApp.js');
-const toml = require('@iarna/toml');
+const toml = require('toml');
 var win = remote.getCurrentWindow();
 window.addEventListener('DOMContentLoaded', () => {
 

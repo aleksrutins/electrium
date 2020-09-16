@@ -1,18 +1,26 @@
 {
-  "name": "electron-test",
+  "name": "electrium",
   "version": "1.0.0",
-  "description": "A test Electron Windows app",
+  "description": "A browser-thing",
+  "author": {
+    "email": "munchkinhalfling@pm.me",
+    "name": "munchkinhalfling",
+    "url": "https://github.com/munchkinhalfling"
+  },
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "license": "MIT",
   "devDependencies": {
-    "electron": "^10.1.1"
+    "electron": "^10.1.1",
+    "electron-builder": "^22.8.0"
   },
   "dependencies": {
-    "@iarna/toml": "^2.2.5",
     "chalk": "^4.1.0",
-    "template-element": "^2.4.1"
+    "template-element": "^2.4.1",
+    "toml": "^3.0.0"
   }
 }
