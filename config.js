@@ -1,1 +1,1 @@
-module.exports = `${process.env.HOME || process.env.USERDIR}/.electrium.toml`;
+module.exports = `${process.env.HOME || process.env.USERPROFILE}/.electrium.toml`;

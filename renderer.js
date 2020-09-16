@@ -18,7 +18,11 @@ minimize.addEventListener("click", () => {
 });
 
 maximize.addEventListener("click", () => {
-  win.setFullScreen(!win.isFullScreen());
+  if(win.isMaximized()) {
+    win.unmaximize();
+  } else {
+    win.maximize();
+  }
 });
 
 quit.addEventListener("click", () => {
