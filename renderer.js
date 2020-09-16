@@ -25,7 +25,7 @@ quit.addEventListener("click", () => {
   win.close();
 });
 
-document.querySelector('#devtools').addEventListener('click', () => win.webContents.toggleDevTools());
+document.querySelector('#devtools').addEventListener('click', () => document.querySelector("#content").openDevTools());
 
 console.log(chalk`[{bold.green Electrium}/{red Render}] loading config`);
 const curConf = toml.parse(fs.readFileSync(config));

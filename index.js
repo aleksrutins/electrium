@@ -39,7 +39,7 @@ function createWindow() {
             webviewTag: true,
             nodeIntegrationInSubFrames: true,
             worldSafeExecuteJavaScript: true,
-            nativeWindowOpen: true
+            //nativeWindowOpen: true
         },
         autoHideMenuBar: true,
         icon: require('path').join(__dirname, 'logo.png')
